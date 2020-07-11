@@ -1,0 +1,96 @@
+---
+title: "Workshop"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Load the janitor package:
+
+library(tidyverse)
+
+```
+
+# Shortcut to make a R chunk:
+Mac: control + option + i
+Windows: ctrl + alt + i
+
+# Shortcut to run a R chunk:
+Mac: command + shift + return
+Windows: ctrl + shift + enter
+
+# Shortcut to run a R line:
+Mac: command + return
+Windows: ctrl + enter
+
+# Shortcut to write %>%
+Mac: command + shift + m
+Windows: ctrl + shift + m
+
+
+# Step 1: Read cap_data.csv into R
+
+```{r}
+
+cap_data <- read_csv("---")
+
+```
+
+# Step 2: Take a look at the data using glimpse() and view()
+
+# Step 3: Clean the data so it can be graphed with the number of complaints on
+# the y-axis, year on the x-axis, and grouped by race
+
+```{r}
+
+cap_data_cleaned <- --- %>%
+  group_by(---, ---) %>% 
+  count()
+
+```
+
+# Step 4: Look at the new cleaned data to see if it is what you want
+
+# Step 5: Make the graph and then run the chunk to see it!
+
+```{r}
+
+cap_data_cleaned %>% 
+  ggplot(aes(x = ---, y = ---, fill = reorder(race, -n))) +
+  geom_col(position = "dodge") +
+  theme_classic() +
+  labs(title = "---",
+       subtitle = "---",
+       x = "",
+       y = "",
+       fill = "Race",
+       caption = "Source: City of Philadelphia via OpenDataPhilly")
+
+```
+
+# Step 6: Training wheels off.
+
+Say we want to just see the number of complaints made by Black and White Americans 
+from 2016-2019. Filter the cap_data to meet this criteria and then clean it so it
+can be used in a ggplot.
+
+```{r}
+
+cap_data_new <- 
+
+```
+
+```{r}
+
+cap_data_new_cleaned <- 
+
+```
+
+```{r}
+
+cap_data_new_cleaned %>% 
+  ggplot()
+
+```
+
